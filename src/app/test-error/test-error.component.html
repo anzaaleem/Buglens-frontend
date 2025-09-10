@@ -1,0 +1,33 @@
+<!-- <div class="error-test-container">
+  <h2>Test Error Component</h2>
+  <p>Use the buttons below to trigger different types of errors.</p>
+
+  <div class="buttons">
+    <button (click)="triggerRuntimeError()">Trigger Runtime Error</button>
+    <button (click)="trigger500()">Trigger HTTP 500 Error</button>
+    <button (click)="trigger422()">Trigger HTTP 422 Error</button>
+    <button (click)="triggerCustomError()">Trigger Custom Error</button>
+  </div>
+
+  <div class="result" *ngIf="message">
+    <strong>Message:</strong> {{ message }}
+  </div>
+</div> -->
+
+<div class="error-test-container">
+  <h2>Test Error Component</h2>
+  <p>Use the buttons below to trigger different types of errors.</p>
+
+  <div class="buttons">
+    <button (click)="triggerRuntimeError()">Trigger Runtime TypeError</button>
+    <button (click)="triggerReferenceError()">Trigger ReferenceError</button>
+    <button (click)="triggerSyntaxError()">Trigger SyntaxError</button>
+    <button (click)="triggerCustomError()">Trigger Custom Error</button>
+    <button (click)="triggerAsyncError()">Trigger Async Angular Error</button>
+  </div>
+
+  <div class="result" *ngIf="message">
+    <strong>Message:</strong> {{ message }}
+  </div>
+</div>
+

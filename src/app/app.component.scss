@@ -1,0 +1,18 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // full viewport height
+}
+
+.content {
+  flex: 1; // push footer to bottom
+}
+
+footer {
+  background: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.9rem;
+}
+
