@@ -27,7 +27,6 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
-              "src/icons",
               "src/worker.js"
             ],
             "allowedCommonJsDependencies": [
@@ -36,7 +35,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": "./src/sw-config.json"
           },
           "configurations": {
             "production": {
@@ -52,7 +52,34 @@
                   "maximumError": "8kB"
                 }
               ],
+              "sourceMap": {
+                "hidden": true,
+                "scripts": true,
+                "styles": true
+              },
               "outputHashing": "all"
+            },
+            "staging": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "sourceMap": {
+                "hidden": true,
+                "scripts": true,
+                "styles": true
+              },
+              "outputHashing": "all",
+              "aot": true,
+              "namedChunks": true
             },
             "development": {
               "optimization": false,
