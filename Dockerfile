@@ -1,12 +1,8 @@
+# ----------------------
 # Stage 1: Build Angular app
-#Node image to user v22
-FROM node:22 AS build
-
-# Set working directory inside container
-WORKDIR /app
-
-# App Env
-ARG APP_ENVIRONMENT=development
+# ----------------------
+FROM node:20 AS build 
+WORKDIR /app                # Set working directory inside container
 
 # Copy package files and install dependencies
 COPY package*.json ./
@@ -16,18 +12,16 @@ RUN npm install
 COPY . .
 
 # Build Angular app for production
-RUN npm run "$APP_ENVIRONMENT"
+RUN npm run build --prod
 
-# Stage 2: Run the app with Nginx layer
+# ----------------------
+# Stage 2: Run with Nginx
+# ----------------------
 FROM nginx:alpine
-COPY --from=build /app/dist/first-ng-app/browser /usr/share/nginx/html
-# Copy built Angular dist into Nginx default folder
-COPY robots.txt /usr/share/nginx/html/browser
-# Remove default nginx config
-RUN rm /etc/nginx/conf.d/default.conf
-# Copy our nginx config
-COPY nginx/config.conf /etc/nginx/conf.d
-# Exposing port for the app
+COPY --from=build /app/dist/first-ng-app /usr/share/nginx/html
+                             # Copy built Angular dist into Nginx default folder
+
 EXPOSE 80
-# Start Nginx in foreground mode
+
 CMD ["nginx", "-g", "daemon off;"]
+                             # Start Nginx in foreground mode
