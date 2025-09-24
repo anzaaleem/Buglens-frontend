@@ -20,17 +20,18 @@
             "outputPath": "dist/first-ng-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "allowedCommonJsDependencies": ["source-map-js"],
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest",
+              "src/icons",
+              "src/worker.js"
+            ],
+            "allowedCommonJsDependencies": [
+              "source-map-js"
             ],
             "styles": [
               "src/styles.scss"
@@ -51,8 +52,7 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -87,10 +87,11 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest",
+              "src/icons",
+              "src/worker.js"
             ],
             "styles": [
               "src/styles.scss"
