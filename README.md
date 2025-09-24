@@ -10,6 +10,19 @@ To start a local development server, run:
 ng serve
 ```
 
+## Using Docker for local development
+
+> If you have not built node_modules, please do so by running the following command `npm install` at root of the project
+
+Make sure the following files in the repository:
+
+Dockerfile.local & docker-compose.yml
+
+Run the app locally using docker:
+`docker-compose up --build -d`
+
+---
+
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
 ## Code scaffolding

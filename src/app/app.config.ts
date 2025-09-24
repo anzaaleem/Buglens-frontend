@@ -6,7 +6,7 @@ import { HTTP_INTERCEPTORS, provideHttpClient, withFetch, withInterceptorsFromDi
 import { provideServiceWorker } from '@angular/service-worker';
 import { buglensModuleModule, TrackitService, CustomErrorHandlerService, UpdateWorkerService } from 'buglens';
 import { environment } from '../environments/environment';
-import { HttpErrorInterceptor } from './interceptors/http-error.interceptor';
+import { HttpErrorInterceptor } from './shared/interceptors/http-error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [

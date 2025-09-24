@@ -1,6 +1,6 @@
 import { Component, input, output } from '@angular/core';
-import { Todo } from '../../model/todo.type';
-import { HighlightCompletedTodoDirective } from '../../directives/highlight-completed-todo.directive';
+import { Todo } from '../../shared/model/todo.type';
+import { HighlightCompletedTodoDirective } from '../../shared/directives/highlight-completed-todo.directive';
 import { UpperCasePipe } from '@angular/common';
 
 @Component({
