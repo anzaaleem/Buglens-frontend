@@ -1,0 +1,14 @@
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    ports:
+      # Format is VM_PORT:CONTAINER_PORT
+      - "4200:4200"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      # Expose Env variables
+      - CHOKIDAR_USEPOLLING=true

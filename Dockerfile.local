@@ -1,0 +1,18 @@
+# Use Node as base image lts-jod 22 stable version
+FROM node:lts-jod AS build
+
+# Set the working directory
+WORKDIR /usr/src/app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the rest of the application code
+COPY . .
+
+# Expose the port that `ng serve` runs on
+EXPOSE 4200
+
+# Start the application make sure to use the correct script that includes host flag with poll flag
+CMD ["npm", "run", "start-docker-local"]
