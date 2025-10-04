@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:3000/log-error',
-  apiURL: 'http://localhost:3000/api'
+  baseURL: 'http://buglens-backend-env.eba-hiuyghmz.eu-north-1.elasticbeanstalk.com/log-error',
+  apiURL: 'http://buglens-backend-env.eba-hiuyghmz.eu-north-1.elasticbeanstalk.com/api'
 };
